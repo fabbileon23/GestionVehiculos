@@ -47,6 +47,9 @@ Public Class FrmMenuPrincipal
         'Para que el proyecto pueda ser trabajado por otros del mismo equipo primero se selecciona enviar cambios
         'Luego sincronizar
         'Pull
+
+
+        'AAAAAAAAAAA
     End Sub
 
     Private Sub btnReportería_Click(sender As Object, e As EventArgs) Handles btnReportería.Click
