@@ -50,6 +50,8 @@ Public Class FrmMenuPrincipal
 
 
         'AAAAAAAAAAA
+
+        'aaaaaaa
     End Sub
 
     Private Sub btnReportería_Click(sender As Object, e As EventArgs) Handles btnReportería.Click
