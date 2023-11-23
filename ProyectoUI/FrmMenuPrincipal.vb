@@ -43,6 +43,8 @@ Public Class FrmMenuPrincipal
 
     Private Sub btnregistrousuarios_Click(sender As Object, e As EventArgs) Handles btnregistrousuarios.Click
         Abrir_Form_Panel(FrmUsuarios)
+        'Para que el proyecto pueda ser trabajado por otros del mismo equipo primero se selecciona enviar cambios
+        'Luego sincronizar
     End Sub
 
     Private Sub btnReportería_Click(sender As Object, e As EventArgs) Handles btnReportería.Click
