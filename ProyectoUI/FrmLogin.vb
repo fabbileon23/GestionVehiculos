@@ -27,6 +27,8 @@ Public Class FrmLogin
             Avisos.ShowDialog()
             FrmMenuPrincipal.ShowDialog()
             Me.Hide()
+            AccesoLogica.ObtenerIdDB(Crendencial)
+
 
         Else
             Avisos.lblmensaje.Text = "Error, usuario o la contraseña son incorrectos."

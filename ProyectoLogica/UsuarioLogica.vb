@@ -100,4 +100,21 @@ Public Class UsuarioLogica
         Return reply
     End Function
 
+    Public Function ObtenerIdDB(Datausuario As Usuarios) As Reply
+        Dim reply As New Reply
+        Dim _reply = AccesoData.ObtenerIdDB(Datausuario)
+
+        If (_reply.Success) Then
+            reply.Success = True
+            reply.Message = "Datos eliminados correctamente"
+            reply.Data = _reply.Data
+        Else
+            reply.Success = False
+            reply.Message = "Ha ocurrido un error"
+
+        End If
+
+        Return reply
+    End Function
+
 End Class

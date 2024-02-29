@@ -24,12 +24,12 @@ Partial Class frmReportes
     Private Sub InitializeComponent()
         Me.Panel_Cabecera = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.btncerrar = New System.Windows.Forms.Button()
         Me.Panel_menus = New System.Windows.Forms.Panel()
-        Me.btnreporte = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.btnreporte = New System.Windows.Forms.Button()
+        Me.btncerrar = New System.Windows.Forms.Button()
         Me.Panel_Cabecera.SuspendLayout()
         Me.Panel_menus.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -37,7 +37,7 @@ Partial Class frmReportes
         '
         'Panel_Cabecera
         '
-        Me.Panel_Cabecera.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
+        Me.Panel_Cabecera.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(27, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.Panel_Cabecera.Controls.Add(Me.Label6)
         Me.Panel_Cabecera.Controls.Add(Me.btncerrar)
         Me.Panel_Cabecera.Dock = System.Windows.Forms.DockStyle.Top
@@ -51,28 +51,16 @@ Partial Class frmReportes
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Ebrima", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(477, 9)
+        Me.Label6.Location = New System.Drawing.Point(438, 9)
         Me.Label6.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(168, 41)
         Me.Label6.TabIndex = 12
         Me.Label6.Text = "Reportería"
         '
-        'btncerrar
-        '
-        Me.btncerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btncerrar.FlatAppearance.BorderSize = 0
-        Me.btncerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btncerrar.Image = Global.ProyectoUI.My.Resources.Resources.Icono_cerrar_FN
-        Me.btncerrar.Location = New System.Drawing.Point(941, 0)
-        Me.btncerrar.Name = "btncerrar"
-        Me.btncerrar.Size = New System.Drawing.Size(76, 64)
-        Me.btncerrar.TabIndex = 3
-        Me.btncerrar.UseVisualStyleBackColor = True
-        '
         'Panel_menus
         '
-        Me.Panel_menus.BackColor = System.Drawing.Color.DarkGray
+        Me.Panel_menus.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(173, Byte), Integer))
         Me.Panel_menus.Controls.Add(Me.btnreporte)
         Me.Panel_menus.Controls.Add(Me.Panel3)
         Me.Panel_menus.Dock = System.Windows.Forms.DockStyle.Left
@@ -81,30 +69,12 @@ Partial Class frmReportes
         Me.Panel_menus.Size = New System.Drawing.Size(226, 484)
         Me.Panel_menus.TabIndex = 12
         '
-        'btnreporte
-        '
-        Me.btnreporte.FlatAppearance.BorderSize = 0
-        Me.btnreporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btnreporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.btnreporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnreporte.Font = New System.Drawing.Font("Ebrima", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnreporte.ForeColor = System.Drawing.Color.White
-        Me.btnreporte.Image = Global.ProyectoUI.My.Resources.Resources.btngenerarreporte
-        Me.btnreporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnreporte.Location = New System.Drawing.Point(12, 0)
-        Me.btnreporte.Name = "btnreporte"
-        Me.btnreporte.Size = New System.Drawing.Size(214, 57)
-        Me.btnreporte.TabIndex = 6
-        Me.btnreporte.Text = "Generar reporte "
-        Me.btnreporte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnreporte.UseVisualStyleBackColor = True
-        '
         'Panel3
         '
-        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Panel3.Location = New System.Drawing.Point(0, 0)
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(170, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(179, Byte), Integer))
+        Me.Panel3.Location = New System.Drawing.Point(0, 23)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(10, 57)
+        Me.Panel3.Size = New System.Drawing.Size(10, 74)
         Me.Panel3.TabIndex = 7
         '
         'Panel1
@@ -118,12 +88,43 @@ Partial Class frmReportes
         '
         'ReportViewer1
         '
+        Me.ReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
         Me.ReportViewer1.Size = New System.Drawing.Size(795, 484)
         Me.ReportViewer1.TabIndex = 0
+        '
+        'btnreporte
+        '
+        Me.btnreporte.FlatAppearance.BorderSize = 0
+        Me.btnreporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(159, Byte), Integer), CType(CType(168, Byte), Integer))
+        Me.btnreporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btnreporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnreporte.Font = New System.Drawing.Font("Ebrima", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnreporte.ForeColor = System.Drawing.Color.White
+        Me.btnreporte.Image = Global.ProyectoUI.My.Resources.Resources.btngenerarreporte
+        Me.btnreporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnreporte.Location = New System.Drawing.Point(12, 23)
+        Me.btnreporte.Name = "btnreporte"
+        Me.btnreporte.Size = New System.Drawing.Size(214, 73)
+        Me.btnreporte.TabIndex = 6
+        Me.btnreporte.Text = "Generar reporte Usuarios "
+        Me.btnreporte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnreporte.UseVisualStyleBackColor = True
+        '
+        'btncerrar
+        '
+        Me.btncerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btncerrar.FlatAppearance.BorderSize = 0
+        Me.btncerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btncerrar.Image = Global.ProyectoUI.My.Resources.Resources.Icono_cerrar_FN
+        Me.btncerrar.Location = New System.Drawing.Point(941, 0)
+        Me.btncerrar.Name = "btncerrar"
+        Me.btncerrar.Size = New System.Drawing.Size(76, 64)
+        Me.btncerrar.TabIndex = 3
+        Me.btncerrar.UseVisualStyleBackColor = True
         '
         'frmReportes
         '

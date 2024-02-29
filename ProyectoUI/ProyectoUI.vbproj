@@ -97,10 +97,23 @@
     <Compile Include="Avisos\Avisos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Avisos\AvisosOperaciones.Designer.vb">
+      <DependentUpon>AvisosOperaciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Avisos\AvisosOperaciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Avisos\Variable.vb" />
     <Compile Include="crudUsuariosDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>crudUsuariosDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="formVehiculos.Designer.vb">
+      <DependentUpon>formVehiculos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formVehiculos.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmLogin.vb">
       <SubType>Form</SubType>
@@ -147,6 +160,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Avisos\Avisos.resx">
       <DependentUpon>Avisos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Avisos\AvisosOperaciones.resx">
+      <DependentUpon>AvisosOperaciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formVehiculos.resx">
+      <DependentUpon>formVehiculos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.vb</DependentUpon>
@@ -265,6 +284,14 @@
     <None Include="Resources\borrarcamposwhite.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\1564534_customer_man_user_account_profile_icon.png" />
+    <None Include="Resources\minimizar-signo.png" />
+    <None Include="Resources\minimizar-signo1.png" />
+    <None Include="Resources\cerrar %281%29.png" />
+    <None Include="Resources\cerrar %282%29.png" />
+    <None Include="Resources\minimizar-signo %282%29.png" />
+    <None Include="Resources\9004715_cross_delete_remove_cancel_icon.png" />
+    <None Include="Resources\9004715_cross_delete_remove_cancel_icon %281%29.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

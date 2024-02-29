@@ -51,7 +51,7 @@ Public Class UsuariosData
             reply.Data = vDataTable
 
         Catch ex As Exception
-            MsgBox("Error al consultar Clientes: " & ex.Message, vbCritical, "Sistema")
+            MsgBox("Error al consultar Usuarios: " & ex.Message, vbCritical, "Sistema")
             reply.Success = False
             reply.Message = "Ha ocurrido un error al consultar el usuario"
         End Try
@@ -65,14 +65,15 @@ Public Class UsuariosData
         vConexionSisUser.Open() 'Abrir conexion
         vMySQLCommand = New SqlCommand
         vMySQLCommand.Connection = vConexionSisUser 'asigno el string de conexion
-        vMySQLCommand.CommandText = "InsertarUsuariosDB"
+        vMySQLCommand.CommandText = "InsertarUsuariosDb"
         vMySQLCommand.CommandType = CommandType.StoredProcedure ' Establecer el tipo de comando como Stored Procedure
         ' Agregar parámetros al Stored Procedure
-        vMySQLCommand.Parameters.Add("@pcedula", SqlDbType.VarChar, 50).Value = Datausuario.cedula
-        vMySQLCommand.Parameters.Add("@pnombre", SqlDbType.VarChar, 180).Value = Datausuario.nombre
-        vMySQLCommand.Parameters.Add("@papellidos", SqlDbType.VarChar, 50).Value = Datausuario.apellidos
-        vMySQLCommand.Parameters.Add("@ptelefono", SqlDbType.VarChar, 20).Value = Datausuario.telefono
-        vMySQLCommand.Parameters.Add("@pgenero", SqlDbType.VarChar, 20).Value = Datausuario.genero
+        vMySQLCommand.Parameters.Add("@pcedula", SqlDbType.NVarChar, 20).Value = Datausuario.cedula
+        vMySQLCommand.Parameters.Add("@pnombre", SqlDbType.NVarChar, 180).Value = Datausuario.nombre
+        vMySQLCommand.Parameters.Add("@pedad", SqlDbType.Int, 50).Value = Datausuario.edad
+        vMySQLCommand.Parameters.Add("@pfechadenacimiento", SqlDbType.NVarChar, 80).Value = Datausuario.fechanacimento
+        vMySQLCommand.Parameters.Add("@ptelefono", SqlDbType.NVarChar, 20).Value = Datausuario.telefono
+        vMySQLCommand.Parameters.Add("@pdireccion", SqlDbType.NVarChar, 255).Value = Datausuario.direccion
         ' vMySQLCommand.Parameters.Add("@Parametro3", SqlDbType.DateTime).Value = param3
         Try
             vMySQLDataAdapter = New SqlDataAdapter(vMySQLCommand)
@@ -102,11 +103,11 @@ Public Class UsuariosData
         vMySQLCommand.CommandText = "ActualizarUsuariosDB"
         vMySQLCommand.CommandType = CommandType.StoredProcedure ' Establecer el tipo de comando como Stored Procedure
         ' Agregar parámetros al Stored Procedure
-        vMySQLCommand.Parameters.Add("@pcedula", SqlDbType.VarChar, 50).Value = Datausuario.cedula
-        vMySQLCommand.Parameters.Add("@pnombre", SqlDbType.VarChar, 180).Value = Datausuario.nombre
-        vMySQLCommand.Parameters.Add("@papellidos", SqlDbType.VarChar, 50).Value = Datausuario.apellidos
-        vMySQLCommand.Parameters.Add("@ptelefono", SqlDbType.VarChar, 20).Value = Datausuario.telefono
-        vMySQLCommand.Parameters.Add("@pgenero", SqlDbType.VarChar, 20).Value = Datausuario.genero
+        vMySQLCommand.Parameters.Add("@pcedula", SqlDbType.NVarChar, 20).Value = Datausuario.cedula
+        vMySQLCommand.Parameters.Add("@pnombre", SqlDbType.NVarChar, 180).Value = Datausuario.nombre
+        vMySQLCommand.Parameters.Add("@pedad", SqlDbType.Int, 50).Value = Datausuario.edad
+        vMySQLCommand.Parameters.Add("@ptelefono", SqlDbType.NVarChar, 20).Value = Datausuario.telefono
+        vMySQLCommand.Parameters.Add("@pdireccion", SqlDbType.NVarChar, 255).Value = Datausuario.direccion
         ' vMySQLCommand.Parameters.Add("@Parametro3", SqlDbType.DateTime).Value = param3
         Try
             vMySQLDataAdapter = New SqlDataAdapter(vMySQLCommand)
@@ -136,6 +137,35 @@ Public Class UsuariosData
         vMySQLCommand.CommandType = CommandType.StoredProcedure ' Establecer el tipo de comando como Stored Procedure
         ' Agregar parámetros al Stored Procedure
         vMySQLCommand.Parameters.Add("@pcedula", SqlDbType.VarChar, 50).Value = Datausuario.cedula
+        ' vMySQLCommand.Parameters.Add("@Parametro3", SqlDbType.DateTime).Value = param3
+        Try
+            vMySQLDataAdapter = New SqlDataAdapter(vMySQLCommand)
+            vMySQLCommand.ExecuteNonQuery()
+            vConexionSisUser.Close() 'Cierro conexion
+
+            reply.Success = True
+            reply.Message = "Eliminación Exitosa!"
+            reply.Data = vDataTable
+
+        Catch ex As Exception
+            MsgBox("Error al consultar Clientes: " & ex.Message, vbCritical, "Sistema")
+            reply.Success = False
+            reply.Message = "Ha ocurrido un error al consultar el usuario"
+        End Try
+
+        Return reply
+    End Function
+
+    Function ObtenerIdDB(Datausuario As Usuarios) As Reply
+        Dim vDataTable As New DataTable 'almacena el resultado de las consultas
+        Dim reply As New Reply
+        vConexionSisUser.Open() 'Abrir conexion
+        vMySQLCommand = New SqlCommand
+        vMySQLCommand.Connection = vConexionSisUser 'asigno el string de conexion
+        vMySQLCommand.CommandText = "ObtenerIdDB"
+        vMySQLCommand.CommandType = CommandType.StoredProcedure ' Establecer el tipo de comando como Stored Procedure
+        ' Agregar parámetros al Stored Procedure
+        vMySQLCommand.Parameters.Add("@pcedula", SqlDbType.VarChar, 50).Value = Datausuario.username
         ' vMySQLCommand.Parameters.Add("@Parametro3", SqlDbType.DateTime).Value = param3
         Try
             vMySQLDataAdapter = New SqlDataAdapter(vMySQLCommand)
